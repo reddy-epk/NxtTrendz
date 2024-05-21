@@ -1,4 +1,3 @@
-
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import {AiFillCloseCircle} from 'react-icons/ai'
 
@@ -16,7 +15,6 @@ const CartItem = props => (
       } = value
       const {cartItemDetails} = props
       const {id, title, brand, quantity, price, imageUrl} = cartItemDetails
-
       const onClickDecrement = () => {
         decrementCartItemQuantity(id)
       }
@@ -40,21 +38,19 @@ const CartItem = props => (
               <button
                 type="button"
                 className="quantity-controller-button"
-                // eslint-disable-next-line react/no-unknown-property
-                testid="minus"
+                data-testid="minus"
                 onClick={onClickDecrement}
               >
-                <BsDashSquare color="#52606D" size={12} />
+                <BsDashSquare color="#52606D" size={12} aria-label="close" />
               </button>
               <p className="cart-quantity">{quantity}</p>
               <button
                 type="button"
                 className="quantity-controller-button"
-                // eslint-disable-next-line react/no-unknown-property
-                testid="plus"
+                data-testid="plus"
                 onClick={onClickIncrement}
               >
-                <BsPlusSquare color="#52606D" size={12} />
+                <BsPlusSquare color="#52606D" size={12} aria-label="close" />
               </button>
             </div>
             <div className="total-price-remove-container">
@@ -72,10 +68,9 @@ const CartItem = props => (
             className="delete-button"
             type="button"
             onClick={onRemoveCartItem}
-            // eslint-disable-next-line react/no-unknown-property
-            testid="remove"
+            data-testid="remove"
           >
-            <AiFillCloseCircle color="#616E7C" size={20} />
+            <AiFillCloseCircle color="#616E7C" size={20} aria-label="close" />
           </button>
         </li>
       )

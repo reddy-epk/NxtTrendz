@@ -17,7 +17,7 @@ class App extends Component {
     cartList: [],
   }
 
-  removeAllCartItem = () => {
+  removeAllCartItems = () => {
     this.setState({cartList: []})
   }
 
@@ -56,6 +56,7 @@ class App extends Component {
     const updatedCartList = cartList.filter(
       eachCartItem => eachCartItem.id !== id,
     )
+
     this.setState({cartList: updatedCartList})
   }
 
@@ -73,6 +74,7 @@ class App extends Component {
 
             return {...eachCartItem, quantity: updatedQuantity}
           }
+
           return eachCartItem
         }),
       }))
@@ -94,7 +96,7 @@ class App extends Component {
           removeCartItem: this.removeCartItem,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
           decrementCartItemQuantity: this.decrementCartItemQuantity,
-          removeAllCartItems: this.removeAllCartItem,
+          removeAllCartItems: this.removeAllCartItems,
         }}
       >
         <Switch>

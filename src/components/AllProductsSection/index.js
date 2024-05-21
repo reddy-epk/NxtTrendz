@@ -91,6 +91,7 @@ class AllProductsSection extends Component {
       apiStatus: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
+    /* eslint-disable */
     const {
       activeOptionId,
       activeCategoryId,
